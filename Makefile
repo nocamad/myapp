@@ -5,7 +5,7 @@ BUILDTAGS=
 # Use the 0.0.0 tag for testing, it shouldn't clobber any release builds
 APP?=myapp
 CHARTS?=mycharts
-USERSPACE?=k8s-community
+USERSPACE?=nocamad
 RELEASE?=0.1.0
 PROJECT?=github.com/${USERSPACE}/${APP}
 HELM_REPO?=https://${USERSPACE}.github.io/${CHARTS}
@@ -65,9 +65,9 @@ vet:
 	@echo "+ $@"
 	@go vet $(shell go list ${PROJECT}/... | grep -v vendor)
 
-test: vendor fmt lint vet
-	@echo "+ $@"
-	@go test -v -race -tags "$(BUILDTAGS) cgo" $(shell go list ${PROJECT}/... | grep -v vendor)
+#test: vendor fmt lint vet
+#	@echo "+ $@"
+#	@go test -v -race -tags "$(BUILDTAGS) cgo" $(shell go list ${PROJECT}/... | grep -v vendor)
 
 cover:
 	@echo "+ $@"

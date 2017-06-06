@@ -2,7 +2,7 @@ all: push
 
 BUILDTAGS=
 
-# Use the 0.0.0 tag for testing, it shouldn't clobber any release builds vr
+# Use the 0.0.0 tag for testing, it shouldn't clobber any release builds vr 
 APP?=myapp
 CHARTS?=mycharts
 USERSPACE?=nocamad
